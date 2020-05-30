@@ -19,7 +19,6 @@ module.exports = {
     'plugin:jsdoc/recommended',
     'prettier',
     'prettier/unicorn',
-    'sort-keys-fix',
   ],
   overrides: [
     {
@@ -32,7 +31,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 9,
   },
-  plugins: ['sonarjs', 'mocha', 'lodash', 'no-secrets'],
+  plugins: ['sonarjs', 'mocha', 'lodash', 'no-secrets', 'sort-keys-fix'],
   rules: {
     'arrow-parens': ['error', 'always'],
     'callback-return': 'error',
