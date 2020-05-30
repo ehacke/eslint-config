@@ -1,7 +1,7 @@
 {
   "name": "@ehacke/eslint-config",
   "description": "General purpose Node ESLint configuration",
-  "version": "1.0.5-0",
+  "version": "1.0.5-1",
   "author": "Eric Hacke",
   "bugs": {
     "url": "https://github.com/ehacke/eslint-config/issues"
