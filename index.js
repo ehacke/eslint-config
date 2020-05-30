@@ -22,7 +22,7 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ['tsconfig.*'],
+      files: ['tsconfig.*', '.eslintrc.*'],
       rules: {
         'sort-keys-fix/sort-keys-fix': 'error',
       },
@@ -56,6 +56,7 @@ module.exports = {
     'lodash/prefer-some': 'off',
     'lodash/prefer-startsWith': 'off',
     'lodash/preferred-alias': 'off',
+    'max-classes-per-file': 'off',
     'max-depth': ['error', 3],
     'max-len': [
       'error',
