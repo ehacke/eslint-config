@@ -70,6 +70,7 @@
     "url": "git+https://github.com/ehacke/eslint-config.git"
   },
   "scripts": {
+    "beta": "npm version prerelease && npm publish",
     "commit": "git-cz",
     "lint": "fixpack && prettier-eslint --write && eslint --fix \"**/*.{js,ts}\"",
     "major": "npm version major && npm publish",
