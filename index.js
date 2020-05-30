@@ -1,15 +1,9 @@
-'use strict';
-
 module.exports = {
   env: {
     browser: true,
     jquery: true,
-    node: true,
     mocha: true,
-  },
-  plugins: ['sonarjs', 'mocha', 'lodash', 'no-secrets'],
-  parserOptions: {
-    ecmaVersion: 9,
+    node: true,
   },
   extends: [
     'airbnb-base',
@@ -25,103 +19,103 @@ module.exports = {
     'plugin:jsdoc/recommended',
     'prettier',
     'prettier/unicorn',
+    'sort-keys-fix',
   ],
+  overrides: [
+    {
+      files: ['tsconfig.*'],
+      rules: {
+        'sort-keys-fix/sort-keys-fix': 'error',
+      },
+    },
+  ],
+  parserOptions: {
+    ecmaVersion: 9,
+  },
+  plugins: ['sonarjs', 'mocha', 'lodash', 'no-secrets'],
   rules: {
+    'arrow-parens': ['error', 'always'],
+    'callback-return': 'error',
+    camelcase: 'warn',
+    'capitalized-comments': 'error',
+    'eslint-comments/no-unused-disable': 'error',
+    'handle-callback-err': 'error',
+    'import/extensions': 'off',
     'import/no-extraneous-dependencies': [
       'warn',
       { devDependencies: ['**/*.test.{js,ts}', '**/*.spec.{js,ts}', '**/*.unit.{js,ts}', '**/*.it.{js,ts}', 'tests/**/*', 'test/**/*'] },
     ],
-    'arrow-parens': ['error', 'always'],
-    'callback-return': 'error',
-    camelcase: 'warn',
-    'no-continue': 'off',
-    'capitalized-comments': 'error',
-    'handle-callback-err': 'error',
+    'import/prefer-default-export': 'off',
+    'jsdoc/no-undefined-types': 'off',
+    'jsdoc/require-param-description': 'off',
+    'jsdoc/require-returns-description': 'off',
+    'lodash/import-scope': ['error', 'member'],
+    'lodash/prefer-constant': 'off',
+    'lodash/prefer-includes': 'off',
+    'lodash/prefer-lodash-chain': 'off',
+    'lodash/prefer-lodash-method': 'off',
+    'lodash/prefer-some': 'off',
+    'lodash/prefer-startsWith': 'off',
+    'lodash/preferred-alias': 'off',
     'max-depth': ['error', 3],
     'max-len': [
       'error',
       {
         code: 150,
-        ignoreUrls: true,
+        ignoreRegExpLiterals: true,
         ignoreStrings: true,
         ignoreTemplateLiterals: true,
-        ignoreRegExpLiterals: true,
+        ignoreUrls: true,
       },
     ],
     'max-nested-callbacks': ['error', 5],
     'max-params': ['error', 5],
-    'no-magic-numbers': [
-      'error',
-      {
-        ignore: [0, 1],
-        enforceConst: true,
-      },
-    ],
-    'no-console': 'error',
-    'no-param-reassign': 'off',
-    'no-plusplus': 'off',
-    'no-process-env': 'error',
-    'no-process-exit': 'error',
-    'no-useless-call': 'error',
-    'no-underscore-dangle': 'off',
-    quotes: ['warn', 'single'],
-    'quote-props': ['error', 'as-needed'],
-    strict: ['error', 'global'],
-
-    // JSdoc
-    'valid-jsdoc': 'off',
-    'require-jsdoc': [
-      'error',
-      {
-        require: {
-          MethodDefinition: true,
-          ClassDeclaration: true,
-        },
-      },
-    ],
-    'jsdoc/require-param-description': 'off',
-    'jsdoc/require-returns-description': 'off',
-    'jsdoc/no-undefined-types': 'off',
-
-    // Mocha
     'mocha/handle-done-callback': 'error',
     'mocha/no-exclusive-tests': 'error',
     'mocha/no-global-tests': 'error',
+    'mocha/no-hooks-for-single-case': 'off',
     'mocha/no-identical-title': 'error',
+    'mocha/no-mocha-arrows': 'off',
     'mocha/no-nested-tests': 'error',
     'mocha/no-pending-tests': 'error',
     'mocha/no-return-and-callback': 'error',
     'mocha/no-sibling-hooks': 'error',
-    'mocha/no-mocha-arrows': 'off',
-    'mocha/no-hooks-for-single-case': 'off',
-
-    // Lodash
-    'lodash/prefer-constant': 'off',
-    'lodash/prefer-lodash-method': 'off',
-    'lodash/preferred-alias': 'off',
-    'lodash/prefer-includes': 'off',
-    'lodash/prefer-some': 'off',
-    'lodash/prefer-startsWith': 'off',
-    'lodash/prefer-lodash-chain': 'off',
-    'lodash/import-scope': ['error', 'member'],
-
+    'no-console': 'error',
+    'no-continue': 'off',
+    'no-magic-numbers': [
+      'error',
+      {
+        enforceConst: true,
+        ignore: [0, 1],
+      },
+    ],
+    'no-param-reassign': 'off',
+    'no-plusplus': 'off',
+    'no-process-env': 'error',
+    'no-process-exit': 'error',
+    'no-secrets/no-secrets': 'error',
+    'no-underscore-dangle': 'off',
+    'no-useless-call': 'error',
     'promise/always-return': 'off',
     'promise/catch-or-return': 'off',
-
+    'quote-props': ['error', 'as-needed'],
+    quotes: ['warn', 'single'],
+    'require-jsdoc': [
+      'error',
+      {
+        require: {
+          ClassDeclaration: true,
+          MethodDefinition: true,
+        },
+      },
+    ],
     'sonarjs/no-duplicate-string': 'off',
-
-    'import/prefer-default-export': 'off',
-    'import/extensions': 'off',
-
-    'eslint-comments/no-unused-disable': 'error',
-
-    // Unicorn
-    'unicorn/filename-case': ['error', { cases: { camelCase: true, pascalCase: true } }],
+    strict: ['error', 'global'],
     'unicorn/consistent-function-scoping': 'off',
+    'unicorn/filename-case': ['error', { cases: { camelCase: true, pascalCase: true } }],
+    'unicorn/no-fn-reference-in-iterator': 'off',
+    'unicorn/no-null': 'off',
     'unicorn/prevent-abbreviations': 'off',
-    'unicorn/no-null': 'off', // Interesting: https://github.com/sindresorhus/meta/issues/7, but need null for Firebase
-    'unicorn/no-fn-reference-in-iterator': 'off', // This is a dumb rule, hopefully they remove it
-
-    'no-secrets/no-secrets': 'error',
+    'valid-jsdoc': 'off',
   },
 };
