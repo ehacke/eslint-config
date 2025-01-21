@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   env: {
     browser: true,
     jquery: true,
@@ -42,7 +42,9 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': [
       'warn',
-      { devDependencies: ['**/*.test.{js,ts}', '**/*.spec.{js,ts}', '**/*.unit.{js,ts}', '**/*.it.{js,ts}', 'tests/**/*', 'test/**/*'] },
+      {
+        devDependencies: ['**/*.test.{js,ts}', '**/*.spec.{js,ts}', '**/*.unit.{js,ts}', '**/*.it.{js,ts}', 'tests/**/*', 'test/**/*'],
+      },
     ],
     'import/prefer-default-export': 'off',
     'jsdoc/no-undefined-types': 'off',
