@@ -66,7 +66,7 @@
     "beta": "npm version prerelease && npm publish",
     "commit": "git-cz",
     "commitlint": "commitlint --edit",
-    "lint": "fixpack && prettier-eslint --write && eslint --fix \"**/*.{js,ts}\"",
+    "lint": "fixpack && prettier-eslint --write && eslint --fix \"**/*.{mjs}\"",
     "major": "npm version major && npm publish",
     "minor": "npm version minor && npm publish",
     "patch": "npm version patch && npm publish",
