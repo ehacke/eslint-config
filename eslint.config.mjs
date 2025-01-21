@@ -13,7 +13,7 @@ const compat = new FlatCompat({
 });
 
 export default [
-  ...compat.extends('airbnb-base', 'plugin:prettier/recommended', 'plugin:unicorn/recommended', 'prettier', 'prettier/unicorn'),
+  ...compat.extends('airbnb-base', 'plugin:prettier/recommended', 'plugin:unicorn/recommended', 'prettier'),
   {
     plugins: {
       'sort-keys-fix': sortKeysFix,
