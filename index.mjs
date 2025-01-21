@@ -13,9 +13,9 @@ import { FlatCompat } from '@eslint/eslintrc';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
+  allConfig: js.configs.all,
   baseDirectory: __dirname,
   recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
 });
 
 export default [
@@ -36,24 +36,24 @@ export default [
     )
   ),
   {
-    plugins: {
-      sonarjs: fixupPluginRules(sonarjs),
-      mocha: fixupPluginRules(mocha),
-      lodash: fixupPluginRules(lodash),
-      'no-secrets': noSecrets,
-      'sort-keys-fix': sortKeysFix,
-    },
-
     languageOptions: {
+      ecmaVersion: 9,
+
       globals: {
         ...globals.browser,
         ...globals.jquery,
         ...globals.mocha,
         ...globals.node,
       },
-
-      ecmaVersion: 9,
       sourceType: 'commonjs',
+    },
+
+    plugins: {
+      lodash: fixupPluginRules(lodash),
+      mocha: fixupPluginRules(mocha),
+      'no-secrets': noSecrets,
+      sonarjs: fixupPluginRules(sonarjs),
+      'sort-keys-fix': sortKeysFix,
     },
 
     rules: {
