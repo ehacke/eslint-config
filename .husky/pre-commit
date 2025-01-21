@@ -1,0 +1,2 @@
+prettier --write *.{mjs,js,jsx,ts,tsx,json,md} && eslint --fix *.{mjs,js,jsx,ts,tsx} && git add . && npm run
+fixpack
