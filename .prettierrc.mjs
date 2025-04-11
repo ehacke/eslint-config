@@ -1,4 +1,4 @@
-import config from "@ehacke/prettier-config";
+import config from '@ehacke/prettier-config';
 
 export default {
   ...config,

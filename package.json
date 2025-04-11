@@ -73,6 +73,7 @@
     "postpublish": "git push",
     "prepare": "husky",
     "preversion": "npm run lint",
+    "print": "eslint --print-config index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
