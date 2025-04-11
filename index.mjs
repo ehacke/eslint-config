@@ -85,6 +85,7 @@ export default [
       'lodash/prefer-startsWith': 'off',
       'lodash/preferred-alias': 'off',
       'max-classes-per-file': 'off',
+      // eslint-disable-next-line no-magic-numbers
       'max-depth': ['error', 3],
 
       'max-len': [
@@ -98,7 +99,9 @@ export default [
         },
       ],
 
+      // eslint-disable-next-line no-magic-numbers
       'max-nested-callbacks': ['error', 5],
+      // eslint-disable-next-line no-magic-numbers
       'max-params': ['error', 5],
       'mocha/handle-done-callback': 'error',
       'mocha/max-top-level-suites': 'off',
