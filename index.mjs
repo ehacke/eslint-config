@@ -1,5 +1,4 @@
 import { fixupConfigRules, fixupPluginRules } from '@eslint/compat';
-import sonarjs from 'eslint-plugin-sonarjs';
 import mocha from 'eslint-plugin-mocha';
 import lodash from 'eslint-plugin-lodash';
 import noSecrets from 'eslint-plugin-no-secrets';
@@ -25,7 +24,6 @@ export default [
       'plugin:import/errors',
       'plugin:import/warnings',
       'plugin:eslint-comments/recommended',
-      'plugin:sonarjs/recommended',
       'plugin:promise/recommended',
       'plugin:prettier/recommended',
       'plugin:lodash/recommended',
@@ -52,7 +50,6 @@ export default [
       lodash: fixupPluginRules(lodash),
       mocha: fixupPluginRules(mocha),
       'no-secrets': noSecrets,
-      sonarjs: fixupPluginRules(sonarjs),
       'sort-keys-fix': sortKeysFix,
     },
 
@@ -147,7 +144,6 @@ export default [
         },
       ],
 
-      'sonarjs/no-duplicate-string': 'off',
       strict: ['error', 'global'],
       'unicorn/consistent-function-scoping': 'off',
 
