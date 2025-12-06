@@ -1,4 +1,6 @@
 import sortKeysFix from 'eslint-plugin-sort-keys-fix';
+import mocha from 'eslint-plugin-mocha';
+import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import js from '@eslint/js';
@@ -19,9 +21,7 @@ export default [
     'plugin:import/warnings',
     'plugin:eslint-comments/recommended',
     'plugin:prettier/recommended',
-    'plugin:unicorn/recommended',
     'plugin:lodash/recommended',
-    'plugin:mocha/recommended',
     'plugin:jsdoc/recommended',
     'prettier'
   ),
@@ -126,6 +126,15 @@ export default [
       'unicorn/prefer-ternary': 'off',
       'unicorn/prevent-abbreviations': 'off',
       'valid-jsdoc': 'off',
+    },
+  },
+  mocha.configs.recommended,
+  eslintPluginUnicorn.configs.recommended,
+  {
+    files: ['**/*.mjs'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
     },
   },
 ];

@@ -3,6 +3,7 @@ import mocha from 'eslint-plugin-mocha';
 import lodash from 'eslint-plugin-lodash';
 import noSecrets from 'eslint-plugin-no-secrets';
 import sortKeysFix from 'eslint-plugin-sort-keys-fix';
+import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -27,8 +28,6 @@ export default [
       'plugin:promise/recommended',
       'plugin:prettier/recommended',
       'plugin:lodash/recommended',
-      'plugin:mocha/recommended',
-      'plugin:unicorn/recommended',
       'plugin:jsdoc/recommended',
       'prettier'
     )
@@ -173,4 +172,6 @@ export default [
       'sort-keys-fix/sort-keys-fix': 'error',
     },
   },
+  mocha.configs.recommended,
+  eslintPluginUnicorn.configs.recommended,
 ];
